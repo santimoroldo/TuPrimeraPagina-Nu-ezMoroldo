@@ -1,0 +1,18 @@
+{% extends "blog/padre.html" %}
+{% block contenidoQueCambia %}
+    <div class="card bg-dark text-white p-4">
+        <h2>Resultados para: "{{ query }}"</h2>
+        {% if autores %}
+            <ul class="list-group mt-3">
+            {% for autor in autores %}
+                <li class="list-group-item bg-secondary text-white">
+                    <strong>{{ autor.nombre }} {{ autor.apellido }}</strong> - {{ autor.email }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-warning">No se encontró ningún autor con ese nombre.</p>
+        {% endif %}
+        <a href="{% url 'BusquedaAutor' %}" class="btn btn-outline-light mt-3">Nueva búsqueda</a>
+    </div>
+{% endblock %}

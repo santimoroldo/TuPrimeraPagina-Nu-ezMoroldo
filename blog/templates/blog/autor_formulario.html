@@ -1,0 +1,24 @@
+{% extends "blog/padre.html" %}
+
+{% block contenidoQueCambia %}
+    <div class="card bg-dark text-white p-4" style="border: 1px solid #444;">
+        <h2 class="mb-4">Cargar Nuevo Autor</h2>
+        
+        <form action="" method="POST"> {% csrf_token %}
+            
+            <div class="mb-3">
+                {{ mi_formulario.as_p }}
+            </div>
+            
+            <button type="submit" class="btn btn-success w-100">
+                Guardar en Base de Datos
+            </button>
+        </form>
+
+        {% if mensaje %}
+            <div class="alert alert-success mt-3">
+                {{ mensaje }}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

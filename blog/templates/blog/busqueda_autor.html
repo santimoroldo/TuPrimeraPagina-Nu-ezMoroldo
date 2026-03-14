@@ -1,0 +1,11 @@
+{% extends "blog/padre.html" %}
+{% block contenidoQueCambia %}
+    <div class="card bg-dark text-white p-4">
+        <h2>Buscar Autor</h2>
+        <p>Ingresá el nombre del autor que querés encontrar en Adsum Tech.</p>
+        <form action="{% url 'ResultadosBusqueda' %}" method="GET">
+            <input type="text" name="nombre" placeholder="Nombre..." class="form-control mb-3">
+            <button type="submit" class="btn btn-primary w-100">Buscar</button>
+        </form>
+    </div>
+{% endblock %}

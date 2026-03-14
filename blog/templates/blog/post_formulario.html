@@ -1,0 +1,11 @@
+{% extends "blog/padre.html" %}
+
+{% block contenidoQueCambia %}
+    <div class="card bg-dark text-white p-4">
+        <h2>Formulario</h2>
+        <form action="" method="POST"> {% csrf_token %}
+            {{ mi_formulario.as_p }}
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+{% endblock %}
